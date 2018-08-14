@@ -297,24 +297,6 @@ func (b *Backend) configure(ctx context.Context) error {
 	data := schema.FromContextBackendConfig(ctx)
 
 	config := &tf_openstack.Config{
-<<<<<<< HEAD
-<<<<<<< HEAD
-		CACertFile:       data.Get("cacert_file").(string),
-		ClientCertFile:   data.Get("cert").(string),
-		ClientKeyFile:    data.Get("key").(string),
-		DomainID:         data.Get("domain_id").(string),
-		DomainName:       data.Get("domain_name").(string),
-		EndpointType:     data.Get("endpoint_type").(string),
-		IdentityEndpoint: data.Get("auth_url").(string),
-		Password:         data.Get("password").(string),
-		Token:            data.Get("token").(string),
-		TenantID:         data.Get("tenant_id").(string),
-		TenantName:       data.Get("tenant_name").(string),
-		Username:         data.Get("user_name").(string),
-		UserID:           data.Get("user_id").(string),
-=======
-=======
->>>>>>> 26174c814... backend/remote: Update Swift Authentication
 		CACertFile:        data.Get("cacert_file").(string),
 		ClientCertFile:    data.Get("cert").(string),
 		ClientKeyFile:     data.Get("key").(string),
@@ -339,15 +321,6 @@ func (b *Backend) configure(ctx context.Context) error {
 	if v, ok := data.GetOkExists("insecure"); ok {
 		insecure := v.(bool)
 		config.Insecure = &insecure
-<<<<<<< HEAD
->>>>>>> 26174c814... backend/remote: Update Swift Authentication
-	}
-
-	if v, ok := data.GetOkExists("insecure"); ok {
-		insecure := v.(bool)
-		config.Insecure = &insecure
-=======
->>>>>>> 26174c814... backend/remote: Update Swift Authentication
 	}
 
 	if err := config.LoadAndValidate(); err != nil {
