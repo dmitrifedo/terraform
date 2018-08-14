@@ -298,6 +298,7 @@ func (b *Backend) configure(ctx context.Context) error {
 
 	config := &tf_openstack.Config{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		CACertFile:       data.Get("cacert_file").(string),
 		ClientCertFile:   data.Get("cert").(string),
 		ClientKeyFile:    data.Get("key").(string),
@@ -312,6 +313,8 @@ func (b *Backend) configure(ctx context.Context) error {
 		Username:         data.Get("user_name").(string),
 		UserID:           data.Get("user_id").(string),
 =======
+=======
+>>>>>>> 26174c814... backend/remote: Update Swift Authentication
 		CACertFile:        data.Get("cacert_file").(string),
 		ClientCertFile:    data.Get("cert").(string),
 		ClientKeyFile:     data.Get("key").(string),
@@ -336,12 +339,15 @@ func (b *Backend) configure(ctx context.Context) error {
 	if v, ok := data.GetOkExists("insecure"); ok {
 		insecure := v.(bool)
 		config.Insecure = &insecure
+<<<<<<< HEAD
 >>>>>>> 26174c814... backend/remote: Update Swift Authentication
 	}
 
 	if v, ok := data.GetOkExists("insecure"); ok {
 		insecure := v.(bool)
 		config.Insecure = &insecure
+=======
+>>>>>>> 26174c814... backend/remote: Update Swift Authentication
 	}
 
 	if err := config.LoadAndValidate(); err != nil {
