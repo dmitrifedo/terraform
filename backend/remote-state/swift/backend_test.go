@@ -76,7 +76,7 @@ func TestBackendPath(t *testing.T) {
 	path := fmt.Sprintf("terraform-state-swift-test-%x", time.Now().Unix())
 	t.Logf("[DEBUG] Generating backend config")
 	b := backend.TestBackendConfig(t, New(), map[string]interface{}{
-		"path": path,
+		"container": path,
 	}).(*Backend)
 	t.Logf("[DEBUG] Backend configured")
 
